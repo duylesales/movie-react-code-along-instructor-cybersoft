@@ -7,6 +7,9 @@ export let userService = {
 };
 export let movieService = {
   getList: () => {
-    return https.get("/api/QuanLyPhim/LayDanhSachPhim");
+    return https.get("/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP14");
+  },
+  getDetail: (id) => {
+    return https.get(`api/QuanLyPhim/LayThongTinPhim?MaPhim=${id}`);
   },
 };

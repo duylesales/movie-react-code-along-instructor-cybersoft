@@ -5,6 +5,8 @@ import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { SET_INFOR } from "../../redux/constant/user";
+import Lottie from "lottie-react";
+import bgAnimate from "./bgAnimate.json";
 const LoginPage = () => {
   let navigate = useNavigate();
   let dispatch = useDispatch();
@@ -33,7 +35,9 @@ const LoginPage = () => {
   };
   return (
     <div className="h-screen flex justify-center items-center bg-orange-500">
-      <div className="w-1/2 h-full"></div>
+      <div className="w-1/2 h-full">
+        <Lottie animationData={bgAnimate} loop={true} />
+      </div>
       <div className="w-1/2 p-10 bg-white rounded">
         <Form
           layout="vertical"
@@ -84,7 +88,6 @@ const LoginPage = () => {
 
           <Form.Item
             wrapperCol={{
-              offset: 8,
               span: 24,
             }}
           >
