@@ -7,19 +7,34 @@ import Header from "./components/Header/Header";
 import { Toaster } from "react-hot-toast";
 import DetailPage from "./page/DetailPage/DetailPage";
 import Footer from "./components/Footer/Footer";
+import Layout from "./layout/Layout";
+import Spinner from "./components/Spinner/Spinner";
 
 function App() {
   return (
     <div>
       <BrowserRouter>
         <Toaster />
-        <Header />
+        <Spinner />
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/detail/:id" element={<DetailPage />} />
+          <Route
+            path="/"
+            element={
+              <Layout>
+                <HomePage />
+              </Layout>
+            }
+          />
+          <Route
+            path="/detail/:id"
+            element={
+              <Layout>
+                <DetailPage />
+              </Layout>
+            }
+          />
           <Route path="/login" element={<LoginPage />} />
         </Routes>
-        <Footer />
       </BrowserRouter>
     </div>
   );

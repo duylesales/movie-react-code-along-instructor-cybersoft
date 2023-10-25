@@ -12,4 +12,9 @@ export let movieService = {
   getDetail: (id) => {
     return https.get(`api/QuanLyPhim/LayThongTinPhim?MaPhim=${id}`);
   },
+  getMovieByTheater: () => {
+    return https.get(
+      `/api/QuanLyRap/LayThongTinLichChieuHeThongRap?maNhom=GP01`
+    );
+  },
 };
