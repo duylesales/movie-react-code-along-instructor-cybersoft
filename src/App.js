@@ -9,30 +9,25 @@ import DetailPage from "./page/DetailPage/DetailPage";
 import Footer from "./components/Footer/Footer";
 import Layout from "./layout/Layout";
 import Spinner from "./components/Spinner/Spinner";
+import AdminLayout from "./layout/AdminLayout";
+import UsersPage from "./UsersPage/UsersPage";
 
 function App() {
   return (
     <div>
       <BrowserRouter>
-        <Toaster />
+        <Toaster position="top-right" reverseOrder={false} />
         <Spinner />
         <Routes>
-          <Route
-            path="/"
-            element={
-              <Layout>
-                <HomePage />
-              </Layout>
-            }
-          />
-          <Route
-            path="/detail/:id"
-            element={
-              <Layout>
-                <DetailPage />
-              </Layout>
-            }
-          />
+          {/* user route */}
+          <Route path="/" element={<Layout />}>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/detail/:id" element={<DetailPage />} />
+          </Route>
+          {/* admin route */}
+          <Route path="/admin" element={<AdminLayout />}>
+            <Route path="users" element={<UsersPage />} />
+          </Route>
           <Route path="/login" element={<LoginPage />} />
         </Routes>
       </BrowserRouter>

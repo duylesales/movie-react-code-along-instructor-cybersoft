@@ -12,7 +12,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 // tạo store
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const store = createStore(
+export const store = createStore(
   rootReducer,
   /* preloadedState, */ composeEnhancers(applyMiddleware(thunk))
 );

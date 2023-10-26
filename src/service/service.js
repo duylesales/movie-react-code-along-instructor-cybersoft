@@ -18,3 +18,8 @@ export let movieService = {
     );
   },
 };
+export let adminService = {
+  getUserList: () => {
+    return https.get("/api/QuanLyNguoiDung/LayDanhSachNguoiDung");
+  },
+};
